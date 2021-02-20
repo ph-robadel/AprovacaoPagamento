@@ -1,5 +1,8 @@
 package br.ufes.aprovacaopagamento.principal;
 
+import br.ufes.aprovacaopagamento.model.GerenteFuncionario;
+import br.ufes.aprovacaopagamento.model.GerenteGeral;
+
 /**
  *
  * @author Pedro Henrique Robadel

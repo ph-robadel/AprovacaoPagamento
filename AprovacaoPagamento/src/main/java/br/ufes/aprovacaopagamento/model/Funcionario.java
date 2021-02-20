@@ -7,9 +7,9 @@ package br.ufes.aprovacaopagamento.model;
 public class Funcionario {
     private String nome;
     private String cargo;
-    private Gestor gerenteResponsavel;
+    private GerenteFuncionario gerenteResponsavel;
 
-    public Funcionario(String nome, String cargo, Gestor gerenteResponsavel) {
+    public Funcionario(String nome, String cargo, GerenteFuncionario gerenteResponsavel) {
         this.nome = nome;
         this.cargo = cargo;
         this.gerenteResponsavel = gerenteResponsavel;
@@ -35,7 +35,7 @@ public class Funcionario {
         return gerenteResponsavel;
     }
 
-    public void setGerenteResponsavel(Gestor gerenteResponsavel) {
+    public void setGerenteResponsavel(GerenteFuncionario gerenteResponsavel) {
         this.gerenteResponsavel = gerenteResponsavel;
     }
     

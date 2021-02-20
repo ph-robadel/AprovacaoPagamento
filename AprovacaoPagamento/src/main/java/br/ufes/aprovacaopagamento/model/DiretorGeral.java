@@ -5,24 +5,20 @@ package br.ufes.aprovacaopagamento.model;
  * @author Pedro Henrique Robadel
  */
 public class DiretorGeral extends Gestor{
-    private DiretorFinanceiro gestorSuperior;
+    private final float LIMITE = 15000f;
     
-    public DiretorGeral(String nome, float limite, String departamento) {
-        super(nome, limite, departamento);
-    }
-
-    public DiretorGeral(String nome, float limite, String departamento, DiretorFinanceiro gestorSuperior) {
-        super(nome, limite, departamento);
-        this.gestorSuperior = gestorSuperior;
+    public DiretorGeral(String nome) {
+        super(nome);
     }
     
     @Override
     public Gestor getGestorSuperior() {
-        return gestorSuperior;
+        return null;
     }
 
-    public void setGestorSuperior(DiretorFinanceiro gestorSuperior) {
-        this.gestorSuperior = gestorSuperior;
+    @Override
+    public float getLimite() {
+        return this.LIMITE;
     }
     
     
