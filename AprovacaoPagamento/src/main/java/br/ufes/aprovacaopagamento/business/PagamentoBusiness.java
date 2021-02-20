@@ -9,7 +9,9 @@ import br.ufes.aprovacaopagamento.model.SolicitacaoPagamento;
  */
 public class PagamentoBusiness {
     public SolicitacaoPagamento solicitar(Funcionario funcionario, float valor){
-        return new SolicitacaoPagamento(funcionario, funcionario.getGerenteResponsavel(), valor);
+        var solicitacaoPagamento = new SolicitacaoPagamento(funcionario, funcionario.getGerenteResponsavel(), valor);
+        processarSolicitacao(solicitacaoPagamento);
+        return solicitacaoPagamento;
     }
     
     public void processarSolicitacao(SolicitacaoPagamento solicitacao){
@@ -30,11 +32,11 @@ public class PagamentoBusiness {
     }
     
     private void aprovar(SolicitacaoPagamento solicitacao){
-        solicitacao.setStatus("Pagamento aprovado");
+        solicitacao.setAprovado(true);
     }
     
     private void reprovar(SolicitacaoPagamento solicitacao){
-        solicitacao.setStatus("Pagamento reprovado");
+        solicitacao.setAprovado(false);
     }
     
     

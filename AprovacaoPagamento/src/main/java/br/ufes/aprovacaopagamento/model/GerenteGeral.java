@@ -31,5 +31,10 @@ public class GerenteGeral extends Gestor{
         return this.LIMITE;
     }
     
-    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.getNome()).append(" - ").append("Gerente Geral");
+        return sb.toString();
+    }
 }

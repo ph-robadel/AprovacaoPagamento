@@ -10,14 +10,14 @@ public class SolicitacaoPagamento{
     private Funcionario funcionario;
     private Gestor gestor;
     private float valor;
-    private String status;
+    private boolean aprovado;
     private LocalDate dataSolicitacao;
 
     public SolicitacaoPagamento(Funcionario funcionario, Gestor gestor, float valor) {
         this.funcionario = funcionario;
         this.gestor = gestor;
         this.valor = valor;
-        this.status = "Aguardando aprovação";
+        this.aprovado = false;
         this.dataSolicitacao = LocalDate.now();
     }
 
@@ -33,8 +33,8 @@ public class SolicitacaoPagamento{
         return valor;
     }
 
-    public String getStatus() {
-        return status;
+    public boolean isAprovado() {
+        return aprovado;
     }
 
     public LocalDate getDataSolicitacao() {
@@ -53,8 +53,27 @@ public class SolicitacaoPagamento{
         this.gestor = gestor;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setAprovado(boolean aprovado) {
+        this.aprovado = aprovado;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Funcionario Solicitante: ").append(this.funcionario.getNome()).append(" - ").append(this.funcionario.getCargo()).append("\n");
+        sb.append("Valor: R$ ").append(this.valor).append("\n");
+        sb.append("Data da solicitação: ").append(this.dataSolicitacao).append("\n");
+        
+        if(isAprovado()){
+            sb.append("Solicitação: Aprovada\n");
+            sb.append("Aprovada pelo gestor : ").append(this.gestor).append("\n");
+        }else{
+            sb.append("Solicitação: Reprovada\n");
+            sb.append("Reprovada pelo gestor : ").append(this.gestor).append("\n");
+        }
+        
+        return sb.toString();
+    }
+    
     
 }

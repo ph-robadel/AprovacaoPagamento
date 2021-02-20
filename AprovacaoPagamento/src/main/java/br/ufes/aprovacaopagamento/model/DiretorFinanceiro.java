@@ -8,7 +8,7 @@ public class DiretorFinanceiro extends Gestor{
     private DiretorGeral gestorSuperior;
     private final float LIMITE = 5000f;
     
-    public DiretorFinanceiro(String nome, String departamento) {
+    public DiretorFinanceiro(String nome) {
         super(nome);
     }
 
@@ -31,4 +31,10 @@ public class DiretorFinanceiro extends Gestor{
         return this.LIMITE;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.getNome()).append(" - ").append("Diretor Financeiro");
+        return sb.toString();
+    }
 }

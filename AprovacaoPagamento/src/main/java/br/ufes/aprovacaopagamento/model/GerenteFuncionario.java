@@ -33,6 +33,13 @@ public class GerenteFuncionario extends Gestor{
     public float getLimite() {
         return this.LIMITE;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.getNome()).append(" - ").append("Gerente imediato ao funcionário");
+        return sb.toString();
+    }
     
     
 }
