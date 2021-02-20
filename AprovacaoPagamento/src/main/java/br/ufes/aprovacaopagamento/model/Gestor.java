@@ -6,10 +6,6 @@ package br.ufes.aprovacaopagamento.model;
  */
 public abstract class Gestor {
     protected String nome;
-    
-    public String getNome() {
-        return nome;
-    }
 
     public Gestor(String nome) {
         this.nome = nome;
@@ -19,9 +15,15 @@ public abstract class Gestor {
     
     public abstract Gestor getGestorSuperior();
     
+    public String getNome() {
+        return nome;
+    }
+    
     public void setNome(String nome) {
         this.nome = nome;
     }
+    
+    
     
 }
 
