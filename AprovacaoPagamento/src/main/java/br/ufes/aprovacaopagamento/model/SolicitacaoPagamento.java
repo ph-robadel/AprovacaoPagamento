@@ -29,12 +29,24 @@ public class SolicitacaoPagamento{
         return gestor;
     }
 
+    public float getValor() {
+        return valor;
+    }
+
     public String getStatus() {
         return status;
     }
 
     public LocalDate getDataSolicitacao() {
         return dataSolicitacao;
+    }
+    
+    public float getLimiteGestor(){
+        return this.gestor.getLimite();
+    }
+    
+    public Gestor getGestorSuperior(){
+        return this.gestor.getGestorSuperior();
     }
 
     public void setGestor(Gestor gestor) {
